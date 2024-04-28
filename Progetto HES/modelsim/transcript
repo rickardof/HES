@@ -1,0 +1,75 @@
+# Compile of hes.sv failed with 5 errors.
+# Compile of hes_tb.sv was successful.
+# 2 compiles, 1 failed with 5 errors.
+# Compile of hes.sv failed with 5 errors.
+# Compile of hes.sv failed with 18 errors.
+# Compile of hes_tb.sv was successful.
+# 2 compiles, 1 failed with 18 errors.
+# Compile of hes.sv failed with 18 errors.
+# Compile of hes.sv failed with 258 errors.
+# Compile of hes.sv failed with 257 errors.
+# Compile of hes.sv failed with 257 errors.
+# Compile of hes.sv failed with 226 errors.
+# Compile of hes.sv failed with 1 errors.
+# Compile of hes.sv was successful.
+vsim -gui work.AES_Stream_Cipher_tb
+# vsim -gui work.AES_Stream_Cipher_tb 
+# Start time: 17:04:48 on Apr 28,2024
+# Loading sv_std.std
+# Loading work.AES_Stream_Cipher_tb
+# Loading work.AES_Stream_Cipher
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "tv/plaintext_array.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/tb/hes_tb.sv(38)
+#    Time: 0 ps  Iteration: 0  Instance: /AES_Stream_Cipher_tb
+# ** Warning: (vsim-7) Failed to open readmem file "tv/ciphertext_array.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/tb/hes_tb.sv(39)
+#    Time: 0 ps  Iteration: 0  Instance: /AES_Stream_Cipher_tb
+# ** Warning: (vsim-7) Failed to open readmem file "tv/expected_ciphertext_array.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/tb/hes_tb.sv(42)
+#    Time: 0 ps  Iteration: 0  Instance: /AES_Stream_Cipher_tb
+# ** Warning: (vsim-7) Failed to open readmem file "tv/expected_plaintext_array.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/tb/hes_tb.sv(43)
+#    Time: 0 ps  Iteration: 0  Instance: /AES_Stream_Cipher_tb
+# ** Note: $stop    : C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/tb/hes_tb.sv(79)
+#    Time: 2585 ps  Iteration: 1  Instance: /AES_Stream_Cipher_tb
+# Break in Module AES_Stream_Cipher_tb at C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/tb/hes_tb.sv line 79
+add wave -position insertpoint  \
+sim:/AES_Stream_Cipher_tb/clk \
+sim:/AES_Stream_Cipher_tb/rst_n \
+sim:/AES_Stream_Cipher_tb/input_valid \
+sim:/AES_Stream_Cipher_tb/new_message \
+sim:/AES_Stream_Cipher_tb/is_ciphertext \
+sim:/AES_Stream_Cipher_tb/key \
+sim:/AES_Stream_Cipher_tb/plaintext_array \
+sim:/AES_Stream_Cipher_tb/ciphertext_array \
+sim:/AES_Stream_Cipher_tb/output_array \
+sim:/AES_Stream_Cipher_tb/output_valid \
+sim:/AES_Stream_Cipher_tb/expected_ciphertext_array \
+sim:/AES_Stream_Cipher_tb/expected_plaintext_array
+vsim -gui work.AES_Stream_Cipher_tb
+# End time: 17:06:44 on Apr 28,2024, Elapsed time: 0:01:56
+# Errors: 0, Warnings: 21
+# vsim -gui work.AES_Stream_Cipher_tb 
+# Start time: 17:06:44 on Apr 28,2024
+# Loading sv_std.std
+# Loading work.AES_Stream_Cipher_tb
+# Loading work.AES_Stream_Cipher
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "tv/plaintext_array.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/tb/hes_tb.sv(38)
+#    Time: 0 ps  Iteration: 0  Instance: /AES_Stream_Cipher_tb
+# ** Warning: (vsim-7) Failed to open readmem file "tv/ciphertext_array.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/tb/hes_tb.sv(39)
+#    Time: 0 ps  Iteration: 0  Instance: /AES_Stream_Cipher_tb
+# ** Warning: (vsim-7) Failed to open readmem file "tv/expected_ciphertext_array.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/tb/hes_tb.sv(42)
+#    Time: 0 ps  Iteration: 0  Instance: /AES_Stream_Cipher_tb
+# ** Warning: (vsim-7) Failed to open readmem file "tv/expected_plaintext_array.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/tb/hes_tb.sv(43)
+#    Time: 0 ps  Iteration: 0  Instance: /AES_Stream_Cipher_tb
+# ** Note: $stop    : C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/tb/hes_tb.sv(79)
+#    Time: 2585 ps  Iteration: 1  Instance: /AES_Stream_Cipher_tb
+# Break in Module AES_Stream_Cipher_tb at C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/tb/hes_tb.sv line 79
+# End time: 17:07:39 on Apr 28,2024, Elapsed time: 0:00:55
+# Errors: 0, Warnings: 5

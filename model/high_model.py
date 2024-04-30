@@ -29,14 +29,14 @@ def aes_stream_cipher(key, data_array, encrypt):
     # Perform encryption or decryption 
     for i in range(len(data_array)):
         # Select the appropriate input data (plaintext or ciphertext)
-        data = data_array[i]
-        cb_i=counter_block[i]
+        data = data_array[i] #i-th byte of the data array
+        cb_i=counter_block[i] #-ith byte of the counter block
 
         # S-box transformation
-        s_box_output = s_box_table[(cb_i >> 4) & 0xF][cb_i & 0xF]
+        s_box_output = s_box_table[(cb_i >> 4) & 0xF][cb_i & 0xF]  #lookup in the table from the msb and lsb of the i-th element of the counter block
 
        
-        output_byte = s_box_output ^ data
+        output_byte = s_box_output ^ data #perform the xor operation
         
          
 

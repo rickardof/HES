@@ -1,4 +1,5 @@
 module AES_Stream_Cipher_tb;
+'include "S_Box_Function.sv"
 
   reg clk = 1'b0;
   always #5 clk = !clk; // Clock period is 10 time units
@@ -57,6 +58,9 @@ module AES_Stream_Cipher_tb;
   initial begin
     @(posedge rst_n);
     @(posedge clk);
+	
+	// Counter initialization
+
 
     // Wait for output to become valid and compare with expected output
     for (int i = 0; i < 256; i = i + 1) begin

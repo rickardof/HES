@@ -1,8 +1,4 @@
 
-
-
-
-
 module AES_Stream_Cipher (
     input wire clk,
     input wire rst_n,
@@ -19,14 +15,14 @@ module AES_Stream_Cipher (
 
 // Internal signals
 // reg [7:0] counter_block; // reg to hold counter block
-reg [3:0] msb;
-reg [3:0] lsb;
+reg [7:0] msb;
+reg [7:0] lsb;
 reg [7:0] i=8'h00; //this is to indicate the i-th byte to process and serves to initialize the counter block value
 
 
 //S box function implementation
 
-function automatic reg[7:0] S_Box_Function (input reg [3:0] msb,input reg[3:0] lsb);
+function automatic reg[7:0] S_Box_Function (input reg [7:0] msb,input reg[7:0] lsb);
    //separate msb and lsb outside the function
 	reg [7:0] s_box_function;
 
@@ -76,30 +72,42 @@ endfunction
 
 
 
+
 // Always block to handle counter block logic
 always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
+        // Initialization
         counter_block <= 8'h0; // Initialize counter block to zero
         output_valid <= 1'b0; // Reset output_valid when in reset state
         output_byte <= 8'h0; // Initialize output byte in reset condition
+        i <= 8'h0; // Initialize i to zero
     end else begin
+        // Counter Block and Index Update
+        if (new_message) begin
+            counter_block <= key; // Set counter block to key if new message
+            i <= 8'h0; // Reset i if new message
+        end else begin
+            counter_block <= (key + i) % 256; // Update counter block
+            i <= i + 1; // Increment i
+        end
+        
+        // Output Generation
         if (input_valid) begin
-            if (new_message) begin
-                counter_block <= key;
-                i <= 8'h00;
-            end else begin
-                i <= i + 1; // Increase i at each byte it comes
-                counter_block <= (key + i) % 256; // Continue counter block if not the initial message  
-                msb <= counter_block[7:4]; // Extract MSB
-                lsb <= counter_block[3:0]; // Extract LSB
-                output_byte <= input_data ^ S_Box_Function(msb, lsb); // Perform XOR operation synchronously
-                output_valid <= 1'b1; // Set output_valid when input_valid is asserted
-            end
+            // Extract MSB and LSB
+            msb <= counter_block[7:4];
+            lsb <= counter_block[3:0];
+            
+            // Perform XOR operation with S-Box function
+            output_byte <= input_data ^ S_Box_Function(msb, lsb);
+            
+            // Set output_valid when input_valid is asserted
+            output_valid <= 1'b1;
         end else begin
             output_valid <= 1'b0; // Reset output_valid if input_valid is not asserted
         end
     end
 end
+
 
 
 endmodule

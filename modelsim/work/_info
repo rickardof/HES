@@ -8,134 +8,82 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/Users/Riccardo/OneDrive/Desktop/Progetto HES/modelsim
+dC:/intelFPGA/20.1
 vAES_Stream_Cipher
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-DXx4 work 11 hes_sv_unit 0 22 XfWdB<Fe_;B_jKL[gKQK@1
-Z1 !s110 1714494794
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-r1
-!s85 0
+!s110 1714557745
 !i10b 1
-!s100 IznUlGg81meH:zhQDzc?L1
-IkQb[<oAf6EV;ZLJN5f_RK3
-!s105 hes_sv_unit
+!s100 7BCP9_P>=<lVjz4]^[3Lc1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ij_z7`RLbIk^@Qh8n8PJ^>1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
 S1
 Z3 dC:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/modelsim
-Z4 w1714494774
-Z5 8C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv
-Z6 FC:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv
-!i122 33
-L0 38 45
-Z7 OV;L;2020.1;71
+w1714557536
+8C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv
+FC:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv
+!i122 44
+L0 6 100
+Z4 OV;L;2020.1;71
+r1
+!s85 0
 31
-Z8 !s108 1714494794.000000
+!s108 1714557744.000000
 !s107 C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv|
-Z9 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv|
 !i113 1
-Z10 o-work work -sv
-Z11 tCvgOpt 0
+Z5 o-work work -sv
+Z6 tCvgOpt 0
 n@a@e@s_@stream_@cipher
 vAES_Stream_Cipher_tb
 R0
-!s110 1714462504
+!s110 1714562812
 !i10b 1
-!s100 i:5>L1gPlm>FD6JVm8R7Z2
-Z12 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I5DSVb3d=h8@flYR?X:FLj3
+!s100 BiXUiANe1lbBhPo7:G3=33
+R1
+I5JfBFAin_AXJa9nEPH9>b0
 R2
 S1
 R3
-w1714404819
-8C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv
-FC:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv
-!i122 24
-L0 1 82
-R7
+w1714562790
+Z7 8C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv
+Z8 FC:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv
+!i122 52
+L0 1 74
+R4
 r1
 !s85 0
 31
-!s108 1714462503.000000
-!s107 C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv|
+!s108 1714562812.000000
+Z9 !s107 C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv|
+Z10 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv|
 !i113 1
-R10
-R11
-n@a@e@s_@stream_@cipher_tb
-Xhes_sv_unit
-R0
-R1
-VXfWdB<Fe_;B_jKL[gKQK@1
-r1
-!s85 0
-!i10b 1
-!s100 ho=bNTdcSaB9R0R]a=H7B0
-IXfWdB<Fe_;B_jKL[gKQK@1
-!i103 1
-S1
-R3
-R4
 R5
 R6
-!i122 33
-L0 2 0
+n@a@e@s_@stream_@cipher_tb
+vAES_Stream_Cipher_TB
+R0
+!s110 1714499535
+!i10b 1
+!s100 Hi86e];4SkcDW@k3nS;W;2
+R1
+IbJ9YZXEcTUkD:j?QdYahT2
+R2
+S1
+R3
+w1714497988
 R7
-31
 R8
-Z13 !s107 C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv|
+!i122 1
+L0 1 94
+R4
+r1
+!s85 0
+31
+!s108 1714499535.000000
 R9
-!i113 1
 R10
-R11
-XS_Box_Function
-R0
-!s110 1714494131
-!i10b 1
-!s100 Sm9SCLLb=9>1g__HhRODI3
-R12
-IPTo1IcS8MBDCONCWb5]i>1
-VPTo1IcS8MBDCONCWb5]i>1
-S1
-R3
-w1714493815
-Z14 8C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/S_Box_Function.sv
-Z15 FC:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/S_Box_Function.sv
-!i122 32
-Z16 L0 3 0
-R7
-r1
-!s85 0
-31
-!s108 1714494131.000000
-Z17 !s107 C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/S_Box_Function.sv|
-Z18 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/S_Box_Function.sv|
 !i113 1
-R10
-R11
-n@s_@box_@function
-XS_Box_Function_sv_unit
-R0
-!s110 1714493173
-VR2]JGL3JKfeiHz7:;H?bj1
-r1
-!s85 0
-!i10b 1
-!s100 o^n_>WW9i:2ZVjS`bhk_o1
-IR2]JGL3JKfeiHz7:;H?bj1
-!i103 1
-S1
-R3
-w1714419428
-R14
-R15
-!i122 27
-R16
-R7
-31
-!s108 1714493172.000000
-R17
-R18
-!i113 1
-R10
-R11
-n@s_@box_@function_sv_unit
+R5
+R6
+n@a@e@s_@stream_@cipher_@t@b

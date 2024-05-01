@@ -1,13 +1,12 @@
-# Compile of hes.sv failed with 1 errors.
-# Compile of hes.sv was successful.
-# Compile of hes_tb.sv failed with 4 errors.
-# Compile of S_Box_Function.sv was successful.
-# Compile of hes.sv was successful.
-# Compile of S_Box_Function.sv failed with 1 errors.
-# Compile of hes.sv was successful.
-# Compile of S_Box_Function.sv was successful.
-# Compile of hes_tb.sv failed with 4 errors.
-# 3 compiles, 1 failed with 4 errors.
-# Compile of hes.sv was successful.
-# Compile of S_Box_Function.sv was successful.
-# Compile of hes.sv was successful.
+# Compile of hes_tb.sv was successful.
+vsim -gui work.AES_Stream_Cipher_tb
+# vsim -gui work.AES_Stream_Cipher_tb 
+# Start time: 13:26:59 on May 01,2024
+# Loading sv_std.std
+# Loading work.AES_Stream_Cipher_tb
+# Loading work.AES_Stream_Cipher
+run -all
+#                   25 Stimulus: key=11, input_data=01, in_valid=1, new_message=1, counter_block=00 
+# Clock: 1, Output Valid: 0
+# End time: 13:33:50 on May 01,2024, Elapsed time: 0:06:51
+# Errors: 0, Warnings: 2

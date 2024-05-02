@@ -38,19 +38,27 @@ module AES_Stream_Cipher_tb;
     $readmemh("tv/input_data.txt", tv_input_data);
 	$readmemh("tv/output_byte.txt", tv_output_byte);
     $readmemh("tv/counter_block.txt", tv_counter_block);
+	key = tv_key[0];
 
     @(posedge rst_n);
     @(posedge clk);
 
     for (int i = 0; i < 10; i++) begin
       @ (posedge clk);
-      key = tv_key[0];
+      //key = tv_key[0]; let's try giving the top level design the key as soon as possible
       input_data = tv_input_data[i];
+	  if (i>=1) 
+		new_message=1'b0;
+	  else
+		new_message=1'b1;
+		
       input_valid = 1'b1;
-      #15; // Hold input_valid for one clock cycle
-      new_message = (i == 0); // Set new_message for the first iteration only
+     
+	  
     end
   end
+
+
 
   // ---- Check routine
   initial begin

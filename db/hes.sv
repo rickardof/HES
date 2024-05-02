@@ -72,8 +72,10 @@ endfunction
 
 
 
-
 // Always block to handle counter block logic
+
+//problem is now that if new_message is asserted counterblock is not updated
+//seems like at the first iteration counterblock skips and assumes the value when new_message is at 0, in fact at first byte when new_message is at 1, output valid is still at 0 (but it should be at 1)
 always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         // Initialization
@@ -81,32 +83,30 @@ always_ff @(posedge clk or negedge rst_n) begin
         output_valid <= 1'b0; // Reset output_valid when in reset state
         output_byte <= 8'h0; // Initialize output byte in reset condition
         i <= 8'h0; // Initialize i to zero
-    end else begin
+    end else if (input_valid) begin
         // Counter Block and Index Update
         if (new_message) begin
             counter_block <= key; // Set counter block to key if new message
             i <= 8'h0; // Reset i if new message
         end else begin
+			i <= i + 1; // Increment i
             counter_block <= (key + i) % 256; // Update counter block
-            i <= i + 1; // Increment i
+            
         end
+        // Extract MSB and LSB
+        msb <= counter_block[7:4];
+        lsb <= counter_block[3:0];
         
-        // Output Generation
-        if (input_valid) begin
-            // Extract MSB and LSB
-            msb <= counter_block[7:4];
-            lsb <= counter_block[3:0];
-            
-            // Perform XOR operation with S-Box function
-            output_byte <= input_data ^ S_Box_Function(msb, lsb);
-            
-            // Set output_valid when input_valid is asserted
-            output_valid <= 1'b1;
-        end else begin
-            output_valid <= 1'b0; // Reset output_valid if input_valid is not asserted
-        end
+        // Perform XOR operation with S-Box function
+        output_byte <= input_data ^ S_Box_Function(msb, lsb);
+        
+        // Set output_valid when input_valid is asserted
+        output_valid <= 1'b1;
+    end else begin
+        output_valid <= 1'b0; // Reset output_valid if input_valid is not asserted
     end
 end
+
 
 
 

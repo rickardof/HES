@@ -1,34 +1,13 @@
-# Compile of hes_tb.sv failed with 2 errors.
-# Compile of hes_tb.sv failed with 2 errors.
-# Compile of hes_tb.sv was successful.
-# Load canceled
-# Load canceled
+# Compile of hes.sv failed with 2 errors.
+# Compile of hes.sv failed with 2 errors.
 # Compile of hes.sv was successful.
-# Compile of hes_tb.sv was successful.
-# 2 compiles, 0 failed with no errors.
 vsim -gui work.aes_stream_cipher_tb
 # vsim -gui work.aes_stream_cipher_tb 
-# Start time: 08:48:35 on May 04,2024
-# Loading sv_std.std
-# Loading work.aes_stream_cipher_tb
-# ** Error: (vsim-3033) Instantiation of 'aes_stream_cipher' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /aes_stream_cipher_tb File: C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv Line: 19
-#         Searched libraries:
-#             C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/modelsim/work
-# Error loading design
-# End time: 08:48:35 on May 04,2024, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 5
-# Compile of hes.sv was successful.
-# Compile of hes_tb.sv was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -gui work.aes_stream_cipher_tb
-# vsim -gui work.aes_stream_cipher_tb 
-# Start time: 08:49:05 on May 04,2024
+# Start time: 15:37:13 on May 04,2024
 # Loading sv_std.std
 # Loading work.aes_stream_cipher_tb
 # Loading work.AES_Stream_Cipher
 # WARNING: No extended dataflow license exists
-# Load canceled
 add wave  \
 sim:/aes_stream_cipher_tb/valid_out \
 sim:/aes_stream_cipher_tb/valid_in \
@@ -48,7 +27,7 @@ run -all
 # Test  7 := ERROR (expected output_byte = a2, got = f8)
 # Test  8 := ERROR (expected output_byte = 30, got = 8f)
 # Test  9 := ERROR (expected output_byte = b6, got = 3d)
-# Test 10 := ERROR (expected output_byte = 4a, got = 84)
-# ** Note: $stop    : C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv(78)
-#    Time: 405 ps  Iteration: 1  Instance: /aes_stream_cipher_tb
-# Break in Module aes_stream_cipher_tb at C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv line 78
+# Test 10 := ERROR (expected output_byte = 4a, got = 00)
+# ** Note: $stop    : C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv(74)
+#    Time: 375 ps  Iteration: 1  Instance: /aes_stream_cipher_tb
+# Break in Module aes_stream_cipher_tb at C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv line 74

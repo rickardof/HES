@@ -10,52 +10,78 @@ cModel Technology
 Z0 dC:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/modelsim
 vAES_Stream_Cipher
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1714805341
+!s110 1714829822
 !i10b 1
-!s100 B6JICf[?7WPicU6z0H_;G2
-Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I1_GjfJ?=iO6;hAF]Y>jOk1
-Z4 VDg1SIo80bB@j0V0VzS_@n1
+!s100 B;fX@HTY<fcUam^7c]hzi3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IdO0GmbdhCDzIOA9Oz:3bf3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1714803016
+w1714829810
 8C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv
 FC:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv
-!i122 0
-L0 1 69
-Z5 OV;L;2020.1;71
+!i122 8
+L0 1 67
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1714805340.000000
+!s108 1714829822.000000
 !s107 C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv|
 !i113 1
-Z6 o-work work -sv
-Z7 tCvgOpt 0
+Z5 o-work work -sv
+Z6 tCvgOpt 0
 n@a@e@s_@stream_@cipher
 vaes_stream_cipher_tb
 R1
-R2
+!s110 1714829105
 !i10b 1
-!s100 :VFLW?AQjHD=]Rm<fEGY>2
+!s100 THE_PM^>9PbU5^@8Z;hf[2
+R2
+IHE6KYVHFD>iP^D[O@0T2]0
 R3
-IIRbQ3gZhe4i0]>Ei9eC5G0
-R4
 S1
 R0
-w1714805337
+w1714829102
 8C:\Users\Riccardo\OneDrive\Desktop\Progetto HES\HES\tb\hes_tb.sv
 FC:\Users\Riccardo\OneDrive\Desktop\Progetto HES\HES\tb\hes_tb.sv
-!i122 1
-L0 1 80
-R5
+!i122 7
+L0 1 76
+R4
 r1
 !s85 0
 31
-!s108 1714805341.000000
+!s108 1714829105.000000
 !s107 C:\Users\Riccardo\OneDrive\Desktop\Progetto HES\HES\tb\hes_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:\Users\Riccardo\OneDrive\Desktop\Progetto HES\HES\tb\hes_tb.sv|
 !i113 1
+R5
 R6
-R7
+vtb_AES_Stream_Cipher
+R1
+!s110 1714828038
+!i10b 1
+!s100 QGj^i]dS;1j7]>cKgEbdX1
+R2
+Ih?0CPLh2LEKRj=F8=^Sn?0
+R3
+S1
+R0
+w1714828010
+8C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv
+FC:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv
+!i122 3
+L0 3 55
+R4
+r1
+!s85 0
+31
+!s108 1714828038.000000
+!s107 C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv|
+!i113 1
+R5
+R6
+ntb_@a@e@s_@stream_@cipher

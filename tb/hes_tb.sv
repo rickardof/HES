@@ -26,36 +26,31 @@ module aes_stream_cipher_tb;
 	.data_out(data_out),
     .valid_out(valid_out)
   );
-
+//internal signals
   reg [7:0] tv_key [10];
   reg [7:0] tv_input_data [10];
   reg [7:0] tv_output_byte [10];
   reg [7:0] tv_counter_block [10];
 
   // ---- Stimuli routine
-  initial begin
+initial begin
     $readmemh("tv/key.txt", tv_key);
     $readmemh("tv/input_data.txt", tv_input_data);
 	$readmemh("tv/output_byte.txt", tv_output_byte);
-    //$readmemh("tv/counter_block.txt", tv_counter_block);
-	key = tv_key[0];
+    
 
+    key = tv_key[0];  // Assuming the key is static for this test.
     @(posedge reset_n);
     @(posedge clk);
-
-    for (int j = 0; j< 10; j++) begin
-      @ (posedge clk);
-      //key = tv_key[0]; let's try giving the top level design the key as soon as possible
+    for (int j = 0; j < 10; j++) begin
+      @(posedge clk);
       data_in = tv_input_data[j];
-	  if (j>=1) 
-		new_message=1'b0;
-	  else
-		new_message=1'b1;
-		
+      new_message = (j == 0) ? 1'b1 : 1'b0;  // More explicit control.
       valid_in = 1'b1;
-     
     end
-  end
+    valid_in = 1'b0;  // Ensure no more valid data after the last input.
+end
+
 
 
 
@@ -67,7 +62,8 @@ module aes_stream_cipher_tb;
     @(posedge clk);
 
     for (int j = 0; j < 10; j++) begin
-      wait(valid_out) @ (posedge clk);
+      wait(valid_out);
+	  @ (posedge clk);
       if (data_out !== tv_output_byte[j]) begin
         $display("Test %2d := ERROR (expected output_byte = %02h, got = %02h)",
                   j + 1, tv_output_byte[j], data_out);

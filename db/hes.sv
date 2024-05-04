@@ -6,7 +6,7 @@ module AES_Stream_Cipher (
     input wire [7:0] key,
     input wire [7:0] data_in,
     output reg [7:0] data_out,
-    output reg valid_out
+    output reg valid_out  //what if we add a valid flag for s_box output
 );
 //internal signals
     reg [7:0] counter_block;
@@ -35,35 +35,33 @@ module AES_Stream_Cipher (
 
    
 
-always_ff @(posedge clk or negedge reset_n) begin
-    if (!reset_n) begin
-        counter_block <= 0;
-    end else if (valid_in) begin
-        if (new_message) begin
-            counter_block <= key; // Initialize counter_block with key
-        end else begin
-            counter_block <= counter_block + 1; // Increment counter_block
-        end
-    end
-end
-
-// Update s_box_input and perform lookup in the same block
-always_comb begin
-    s_box_input = (counter_block[7:4] * 16) + counter_block[3:0];
-    s_box_out = aes_inv_sbox[s_box_input]; // Perform S-box lookup
-end
-
-    // Perform the XOR operation to encrypt/decrypt and manage output validity
+    // Sequential block for updating counter
     always_ff @(posedge clk or negedge reset_n) begin
         if (!reset_n) begin
-            data_out <= 0;
-            valid_out <= 0;
+            counter_block <= 0;
         end else if (valid_in) begin
-            data_out <= data_in ^ s_box_out; // XOR data input with S-box output
-            valid_out <= 1; // Signal that the output data is ready
-        end else begin
-            valid_out <= 0; // Output is not valid when input is not valid
+            if (new_message) begin
+                counter_block <= key; // Initialize counter_block with key
+            end else begin
+                counter_block <= counter_block + 1; // Increment counter_block
+            end
         end
     end
 
+    // Combinational logic to update output immediately
+    always_comb begin
+        if (!reset_n) begin
+            data_out = 0;
+            valid_out = 0;
+        end else if (valid_in) begin
+            // Update s_box_input immediately based on the counter_block
+            s_box_input = (counter_block[7:4] * 16) + counter_block[3:0];
+            s_box_out = aes_inv_sbox[s_box_input]; // Perform S-box lookup
+            data_out = data_in ^ s_box_out; // XOR data input with S-box output
+            valid_out = 1; // Signal that the output data is ready
+        end else begin
+            valid_out = 0; // Output is not valid when input is not valid
+            data_out = 0; // Optionally clear output when not valid
+        end
+    end
 endmodule

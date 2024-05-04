@@ -1,34 +1,54 @@
+# Compile of hes_tb.sv failed with 2 errors.
+# Compile of hes_tb.sv failed with 2 errors.
+# Compile of hes_tb.sv was successful.
+# Load canceled
+# Load canceled
 # Compile of hes.sv was successful.
 # Compile of hes_tb.sv was successful.
 # 2 compiles, 0 failed with no errors.
-vsim -gui work.AES_Stream_Cipher_tb
-# vsim -gui work.AES_Stream_Cipher_tb 
-# Start time: 19:41:22 on May 02,2024
+vsim -gui work.aes_stream_cipher_tb
+# vsim -gui work.aes_stream_cipher_tb 
+# Start time: 08:48:35 on May 04,2024
 # Loading sv_std.std
-# Loading work.AES_Stream_Cipher_tb
+# Loading work.aes_stream_cipher_tb
+# ** Error: (vsim-3033) Instantiation of 'aes_stream_cipher' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /aes_stream_cipher_tb File: C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv Line: 19
+#         Searched libraries:
+#             C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/modelsim/work
+# Error loading design
+# End time: 08:48:35 on May 04,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 5
+# Compile of hes.sv was successful.
+# Compile of hes_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.aes_stream_cipher_tb
+# vsim -gui work.aes_stream_cipher_tb 
+# Start time: 08:49:05 on May 04,2024
+# Loading sv_std.std
+# Loading work.aes_stream_cipher_tb
 # Loading work.AES_Stream_Cipher
 # WARNING: No extended dataflow license exists
+# Load canceled
 add wave  \
-sim:/AES_Stream_Cipher_tb/clk \
-sim:/AES_Stream_Cipher_tb/rst_n \
-sim:/AES_Stream_Cipher_tb/input_valid \
-sim:/AES_Stream_Cipher_tb/new_message \
-sim:/AES_Stream_Cipher_tb/key \
-sim:/AES_Stream_Cipher_tb/input_data \
-sim:/AES_Stream_Cipher_tb/output_valid \
-sim:/AES_Stream_Cipher_tb/output_byte \
-sim:/AES_Stream_Cipher_tb/counter_block
+sim:/aes_stream_cipher_tb/valid_out \
+sim:/aes_stream_cipher_tb/valid_in \
+sim:/aes_stream_cipher_tb/reset_n \
+sim:/aes_stream_cipher_tb/new_message \
+sim:/aes_stream_cipher_tb/key \
+sim:/aes_stream_cipher_tb/data_out \
+sim:/aes_stream_cipher_tb/data_in \
+sim:/aes_stream_cipher_tb/clk
 run -all
-# Test  1 := ERROR (expected output_byte = 14, got = xx, expected counter_block = 0c, got = 11)
-# Test  2 := ERROR (expected output_byte = 50, got = 50, expected counter_block = 0d, got = 11)
-# Test  3 := ERROR (expected output_byte = 69, got = e0, expected counter_block = 0e, got = 12)
-# Test  4 := ERROR (expected output_byte = d1, got = e7, expected counter_block = 0f, got = 13)
-# Test  5 := ERROR (expected output_byte = 35, got = 3c, expected counter_block = 10, got = 14)
-# Test  6 := ERROR (expected output_byte = 30, got = 84, expected counter_block = 11, got = 15)
-# Test  7 := ERROR (expected output_byte = a2, got = 9c, expected counter_block = 12, got = 16)
-# Test  8 := ERROR (expected output_byte = 30, got = 27, expected counter_block = 13, got = 17)
-# Test  9 := ERROR (expected output_byte = b6, got = f6, expected counter_block = 14, got = 18)
-# Test 10 := ERROR (expected output_byte = 4a, got = 8d, expected counter_block = 15, got = 19)
+# Test  1 := ERROR (expected output_byte = 14, got = 53)
+# Test  2 := ERROR (expected output_byte = 50, got = e1)
+# Test  3 := ERROR (expected output_byte = 69, got = 3a)
+# Test  4 := ERROR (expected output_byte = d1, got = 86)
+# Test  5 := ERROR (expected output_byte = 35, got = 9e)
+# Test  6 := ERROR (expected output_byte = 30, got = 29)
+# Test  7 := ERROR (expected output_byte = a2, got = f8)
+# Test  8 := ERROR (expected output_byte = 30, got = 8f)
+# Test  9 := ERROR (expected output_byte = b6, got = 3d)
+# Test 10 := ERROR (expected output_byte = 4a, got = 84)
 # ** Note: $stop    : C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv(78)
-#    Time: 405 ps  Iteration: 1  Instance: /AES_Stream_Cipher_tb
-# Break in Module AES_Stream_Cipher_tb at C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv line 78
+#    Time: 405 ps  Iteration: 1  Instance: /aes_stream_cipher_tb
+# Break in Module aes_stream_cipher_tb at C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv line 78

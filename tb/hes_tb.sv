@@ -1,30 +1,30 @@
-module AES_Stream_Cipher_tb;
-
+module aes_stream_cipher_tb;
+//add debugs for all values, first check whether s_box function works properly
   reg clk = 1'b0;
   always #15 clk = !clk;  // Period of the clock is 15 units, so it changes every 15 units
 
-  reg rst_n = 1'b0;
-  initial #20 rst_n = 1'b1; // Reset changes just one time
+  reg reset_n = 1'b0;
+  initial #20 reset_n = 1'b1; // Reset changes just one time
 
-  reg input_valid = 1'b0;
+  reg valid_in = 1'b0;
   reg new_message = 1'b0;
   reg [7:0] key;
-  reg [7:0] input_data;
+  reg [7:0] data_in;
   
-  wire output_valid;
-  wire [7:0] output_byte;
-  wire [7:0] counter_block;
+  wire valid_out;
+  wire [7:0] data_out;
+  
+  
 
   AES_Stream_Cipher UUT (
     .clk(clk),
-    .rst_n(rst_n),
+    .reset_n(reset_n),
+	.valid_in(valid_in),
+	.new_message(new_message),
     .key(key),
-    .input_valid(input_valid),
-    .new_message(new_message),
-    .input_data(input_data),
-    .output_valid(output_valid),
-    .output_byte(output_byte),
-    .counter_block(counter_block)
+    .data_in(data_in),
+	.data_out(data_out),
+    .valid_out(valid_out)
   );
 
   reg [7:0] tv_key [10];
@@ -37,24 +37,23 @@ module AES_Stream_Cipher_tb;
     $readmemh("tv/key.txt", tv_key);
     $readmemh("tv/input_data.txt", tv_input_data);
 	$readmemh("tv/output_byte.txt", tv_output_byte);
-    $readmemh("tv/counter_block.txt", tv_counter_block);
+    //$readmemh("tv/counter_block.txt", tv_counter_block);
 	key = tv_key[0];
 
-    @(posedge rst_n);
+    @(posedge reset_n);
     @(posedge clk);
 
-    for (int i = 0; i < 10; i++) begin
+    for (int j = 0; j< 10; j++) begin
       @ (posedge clk);
       //key = tv_key[0]; let's try giving the top level design the key as soon as possible
-      input_data = tv_input_data[i];
-	  if (i>=1) 
+      data_in = tv_input_data[j];
+	  if (j>=1) 
 		new_message=1'b0;
 	  else
 		new_message=1'b1;
 		
-      input_valid = 1'b1;
+      valid_in = 1'b1;
      
-	  
     end
   end
 
@@ -64,18 +63,18 @@ module AES_Stream_Cipher_tb;
   initial begin
    
 
-    @(posedge rst_n);
+    @(posedge reset_n);
     @(posedge clk);
 
-    for (int i = 0; i < 10; i++) begin
-        wait(output_valid) @ (posedge clk)
-        if (output_byte !== tv_output_byte[i] || counter_block !== tv_counter_block[i])
-          $display("Test %2d := ERROR (expected output_byte = %02h, got = %02h, expected counter_block = %02h, got = %02h)",
-                    i + 1, tv_output_byte[i], output_byte, tv_counter_block[i], counter_block);
-        else
-          $display("Test %2d := OK", i + 1);
+    for (int j = 0; j < 10; j++) begin
+      wait(valid_out) @ (posedge clk);
+      if (data_out !== tv_output_byte[j]) begin
+        $display("Test %2d := ERROR (expected output_byte = %02h, got = %02h)",
+                  j + 1, tv_output_byte[j], data_out);
+      end else begin
+        $display("Test %2d := OK", j + 1);
       end
-      $stop;
+    end
+	 $stop;  
   end
-
 endmodule

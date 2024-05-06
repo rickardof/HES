@@ -1,10 +1,10 @@
 module aes_stream_cipher_tb;
 //add debugs for all values, first check whether s_box function works properly
   reg clk = 1'b0;
-  always #15 clk = !clk;  // Period of the clock is 15 units, so it changes every 15 units
+  always #5.5 clk = !clk;  // Period of the clock is 11 units, so it changes every 15 units
 
   reg reset_n = 1'b0;
-  initial #20 reset_n = 1'b1; // Reset changes just one time
+  initial #14.5 reset_n = 1'b1; // Reset changes just one time
 
   reg valid_in = 1'b0;
   reg new_message = 1'b0;
@@ -13,10 +13,11 @@ module aes_stream_cipher_tb;
   
   wire valid_out;
   wire [7:0] data_out;
+  wire [7:0] counter_block; //just here for testing
   
   
 
-  AES_Stream_Cipher UUT (
+  AES_cipher UUT (
     .clk(clk),
     .reset_n(reset_n),
 	.valid_in(valid_in),
@@ -24,7 +25,8 @@ module aes_stream_cipher_tb;
     .key(key),
     .data_in(data_in),
 	.data_out(data_out),
-    .valid_out(valid_out)
+    .valid_out(valid_out),
+	.counter_block(counter_block)
   );
 //internal signals
   reg [7:0] tv_key [10];
@@ -34,19 +36,20 @@ module aes_stream_cipher_tb;
 
   // ---- Stimuli routine
 initial begin
-    $readmemh("tv/key.txt", tv_key);
+    //$readmemh("tv/key.txt", tv_key);
     $readmemh("tv/input_data.txt", tv_input_data);
 	$readmemh("tv/output_byte.txt", tv_output_byte);
     
 
-    key = tv_key[0];  // Assuming the key is static for this test.
+      // Assuming the key is static for this test.
     @(posedge reset_n);
     @(posedge clk);
     for (int j = 0; j < 10; j++) begin
       @(posedge clk);
-      data_in = tv_input_data[j];
-      new_message = (j == 0) ? 1'b1 : 1'b0;  // More explicit control.
-      valid_in = 1'b1;
+      new_message = (j == 0) ? 1'b1 : 1'b0;  //
+	  data_in = tv_input_data[j];
+	  key = 8'h11;
+      valid_in = 1'b1; 
     end
     valid_in = 1'b0;  // Ensure no more valid data after the last input.
 end
@@ -65,8 +68,8 @@ end
       wait(valid_out);
 	  @ (posedge clk);
       if (data_out !== tv_output_byte[j]) begin
-        $display("Test %2d := ERROR (expected output_byte = %02h, got = %02h)",
-                  j + 1, tv_output_byte[j], data_out);
+        $display("Test %2d := ERROR (expected output_byte = %02h, got = %02h, counter_block at= %02h)",
+                  j + 1, tv_output_byte[j], data_out,counter_block);
       end else begin
         $display("Test %2d := OK", j + 1);
       end

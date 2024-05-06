@@ -1,33 +1,33 @@
-# Compile of hes.sv failed with 2 errors.
-# Compile of hes.sv failed with 2 errors.
-# Compile of hes.sv was successful.
+# Compile of AES_cipher.sv failed with 2 errors.
+# Compile of AES_cipher.sv failed with 2 errors.
+# Compile of AES_cipher.sv was successful.
 vsim -gui work.aes_stream_cipher_tb
 # vsim -gui work.aes_stream_cipher_tb 
-# Start time: 15:37:13 on May 04,2024
+# Start time: 22:14:20 on May 06,2024
 # Loading sv_std.std
 # Loading work.aes_stream_cipher_tb
-# Loading work.AES_Stream_Cipher
-# WARNING: No extended dataflow license exists
+# Loading work.AES_cipher
 add wave  \
-sim:/aes_stream_cipher_tb/valid_out \
-sim:/aes_stream_cipher_tb/valid_in \
+sim:/aes_stream_cipher_tb/clk \
 sim:/aes_stream_cipher_tb/reset_n \
+sim:/aes_stream_cipher_tb/valid_in \
 sim:/aes_stream_cipher_tb/new_message \
 sim:/aes_stream_cipher_tb/key \
-sim:/aes_stream_cipher_tb/data_out \
 sim:/aes_stream_cipher_tb/data_in \
-sim:/aes_stream_cipher_tb/clk
+sim:/aes_stream_cipher_tb/valid_out \
+sim:/aes_stream_cipher_tb/data_out \
+sim:/aes_stream_cipher_tb/counter_block
 run -all
-# Test  1 := ERROR (expected output_byte = 14, got = 53)
-# Test  2 := ERROR (expected output_byte = 50, got = e1)
-# Test  3 := ERROR (expected output_byte = 69, got = 3a)
-# Test  4 := ERROR (expected output_byte = d1, got = 86)
-# Test  5 := ERROR (expected output_byte = 35, got = 9e)
-# Test  6 := ERROR (expected output_byte = 30, got = 29)
-# Test  7 := ERROR (expected output_byte = a2, got = f8)
-# Test  8 := ERROR (expected output_byte = 30, got = 8f)
-# Test  9 := ERROR (expected output_byte = b6, got = 3d)
-# Test 10 := ERROR (expected output_byte = 4a, got = 00)
-# ** Note: $stop    : C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv(74)
-#    Time: 375 ps  Iteration: 1  Instance: /aes_stream_cipher_tb
-# Break in Module aes_stream_cipher_tb at C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv line 74
+# Test  1 := OK
+# Test  2 := OK
+# Test  3 := OK
+# Test  4 := OK
+# Test  5 := OK
+# Test  6 := OK
+# Test  7 := OK
+# Test  8 := OK
+# Test  9 := OK
+# Test 10 := ERROR (expected output_byte = 49, got = 87, counter_block at= 19)
+# ** Note: $stop    : C:/Users/Riccardo/Desktop/Progetto HES/HES/tb/hes_tb.sv(77)
+#    Time: 150 ps  Iteration: 1  Instance: /aes_stream_cipher_tb
+# Break in Module aes_stream_cipher_tb at C:/Users/Riccardo/Desktop/Progetto HES/HES/tb/hes_tb.sv line 77

@@ -7,81 +7,55 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/modelsim
-vAES_Stream_Cipher
+Z0 dC:/Users/Riccardo/Desktop/Progetto HES/HES/modelsim
+vAES_cipher
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1714829822
+!s110 1715026455
 !i10b 1
-!s100 B;fX@HTY<fcUam^7c]hzi3
+!s100 0McgE=V9JEZHkb;n360d62
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IdO0GmbdhCDzIOA9Oz:3bf3
+I`a4hXnj[ePzmCzo8T;mUa2
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1714829810
-8C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv
-FC:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv
-!i122 8
-L0 1 67
+w1715026450
+8C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv
+FC:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv
+!i122 59
+L0 1 112
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1714829822.000000
-!s107 C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/db/hes.sv|
+!s108 1715026455.000000
+!s107 C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv|
 !i113 1
 Z5 o-work work -sv
 Z6 tCvgOpt 0
-n@a@e@s_@stream_@cipher
+n@a@e@s_cipher
 vaes_stream_cipher_tb
 R1
-!s110 1714829105
+!s110 1715026010
 !i10b 1
-!s100 THE_PM^>9PbU5^@8Z;hf[2
+!s100 ncH:;7L?^BeP6^8>omF3O1
 R2
-IHE6KYVHFD>iP^D[O@0T2]0
+I?M0nj62SREh0cGPzKnFk92
 R3
 S1
 R0
-w1714829102
-8C:\Users\Riccardo\OneDrive\Desktop\Progetto HES\HES\tb\hes_tb.sv
-FC:\Users\Riccardo\OneDrive\Desktop\Progetto HES\HES\tb\hes_tb.sv
-!i122 7
-L0 1 76
+w1715020424
+8C:/Users/Riccardo/Desktop/Progetto HES/HES/tb/hes_tb.sv
+FC:/Users/Riccardo/Desktop/Progetto HES/HES/tb/hes_tb.sv
+!i122 56
+L0 1 79
 R4
 r1
 !s85 0
 31
-!s108 1714829105.000000
-!s107 C:\Users\Riccardo\OneDrive\Desktop\Progetto HES\HES\tb\hes_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:\Users\Riccardo\OneDrive\Desktop\Progetto HES\HES\tb\hes_tb.sv|
+!s108 1715026010.000000
+!s107 C:/Users/Riccardo/Desktop/Progetto HES/HES/tb/hes_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Riccardo/Desktop/Progetto HES/HES/tb/hes_tb.sv|
 !i113 1
 R5
 R6
-vtb_AES_Stream_Cipher
-R1
-!s110 1714828038
-!i10b 1
-!s100 QGj^i]dS;1j7]>cKgEbdX1
-R2
-Ih?0CPLh2LEKRj=F8=^Sn?0
-R3
-S1
-R0
-w1714828010
-8C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv
-FC:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv
-!i122 3
-L0 3 55
-R4
-r1
-!s85 0
-31
-!s108 1714828038.000000
-!s107 C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Riccardo/OneDrive/Desktop/Progetto HES/HES/tb/hes_tb.sv|
-!i113 1
-R5
-R6
-ntb_@a@e@s_@stream_@cipher

@@ -10,52 +10,78 @@ cModel Technology
 Z0 dC:/Users/Riccardo/Desktop/Progetto HES/HES/modelsim
 vAES_cipher
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1715026455
+!s110 1715086292
 !i10b 1
-!s100 0McgE=V9JEZHkb;n360d62
+!s100 i9NGC4F_jnbN]nhXWXSWR2
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I`a4hXnj[ePzmCzo8T;mUa2
+I4leaO`;f?=_TGJ@HWIc7U3
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1715026450
-8C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv
-FC:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv
-!i122 59
-L0 1 112
-Z4 OV;L;2020.1;71
+w1715086270
+Z4 8C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv
+Z5 FC:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv
+!i122 24
+Z6 L0 1 83
+Z7 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1715026455.000000
-!s107 C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv|
+!s108 1715086292.000000
+Z8 !s107 C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv|
+Z9 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv|
 !i113 1
-Z5 o-work work -sv
-Z6 tCvgOpt 0
+Z10 o-work work -sv
+Z11 tCvgOpt 0
 n@a@e@s_cipher
-vaes_stream_cipher_tb
+vAES_Stream_Cipher
 R1
-!s110 1715026010
+!s110 1715066469
 !i10b 1
-!s100 ncH:;7L?^BeP6^8>omF3O1
+!s100 5gN^l<=a;jVJLO3Z50Q6H2
 R2
-I?M0nj62SREh0cGPzKnFk92
+I<ZH1Wg?W2d1h9T`45gC0Q2
 R3
 S1
 R0
-w1715020424
-8C:/Users/Riccardo/Desktop/Progetto HES/HES/tb/hes_tb.sv
-FC:/Users/Riccardo/Desktop/Progetto HES/HES/tb/hes_tb.sv
-!i122 56
-L0 1 79
+w1715066233
 R4
+R5
+!i122 1
+L0 1 69
+R7
 r1
 !s85 0
 31
-!s108 1715026010.000000
+!s108 1715066469.000000
+R8
+R9
+!i113 1
+R10
+R11
+n@a@e@s_@stream_@cipher
+vaes_stream_cipher_tb
+R1
+!s110 1715086186
+!i10b 1
+!s100 T9M4PI_M8l^eDGYXG44Zi1
+R2
+I:=>EXM;@dG9V]TCbKm`lL2
+R3
+S1
+R0
+w1715086173
+8C:/Users/Riccardo/Desktop/Progetto HES/HES/tb/hes_tb.sv
+FC:/Users/Riccardo/Desktop/Progetto HES/HES/tb/hes_tb.sv
+!i122 23
+R6
+R7
+r1
+!s85 0
+31
+!s108 1715086186.000000
 !s107 C:/Users/Riccardo/Desktop/Progetto HES/HES/tb/hes_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Riccardo/Desktop/Progetto HES/HES/tb/hes_tb.sv|
 !i113 1
-R5
-R6
+R10
+R11

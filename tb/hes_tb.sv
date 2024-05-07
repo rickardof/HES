@@ -1,7 +1,7 @@
 module aes_stream_cipher_tb;
 //add debugs for all values, first check whether s_box function works properly
   reg clk = 1'b0;
-  always #5.5 clk = !clk;  // Period of the clock is 11 units, so it changes every 15 units
+  always #5.5 clk = !clk;  // Period of the clock is 11 units
 
   reg reset_n = 1'b0;
   initial #14.5 reset_n = 1'b1; // Reset changes just one time
@@ -44,14 +44,18 @@ initial begin
       // Assuming the key is static for this test.
     @(posedge reset_n);
     @(posedge clk);
+	key = 8'h11;
+	new_message =1'b1;
+
     for (int j = 0; j < 10; j++) begin
       @(posedge clk);
-      new_message = (j == 0) ? 1'b1 : 1'b0;  //
+      new_message = 1'b0;  //
 	  data_in = tv_input_data[j];
-	  key = 8'h11;
+	 
       valid_in = 1'b1; 
     end
-    valid_in = 1'b0;  // Ensure no more valid data after the last input.
+    
+    
 end
 
 

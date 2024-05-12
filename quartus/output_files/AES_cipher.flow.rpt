@@ -1,5 +1,5 @@
 Flow report for AES_cipher
-Sun May  5 20:19:08 2024
+Wed May  8 15:14:29 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Sun May  5 20:13:52 2024          ;
+; Flow Status                     ; Successful - Wed May  8 15:14:22 2024          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; AES_cipher                                     ;
 ; Top-level Entity Name           ; AES_cipher                                     ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CGXFC9D6F27C7                                 ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 13 / 113,560 ( < 1 % )                         ;
-; Total registers                 ; 35                                             ;
+; Logic utilization (in ALMs)     ; 49 / 113,560 ( < 1 % )                         ;
+; Total registers                 ; 15                                             ;
 ; Total pins                      ; 37 / 378 ( 10 % )                              ;
 ; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 2,048 / 12,492,800 ( < 1 % )                   ;
+; Total block memory bits         ; 0 / 12,492,800 ( 0 % )                         ;
 ; Total DSP Blocks                ; 0 / 342 ( 0 % )                                ;
 ; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                                  ;
 ; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                                  ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/05/2024 20:12:05 ;
+; Start date & time ; 05/08/2024 15:12:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; AES_cipher          ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 233497580751798.171493272519904        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 233497580751798.171517397819416        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -96,19 +96,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4836 MB             ; 00:00:14                           ;
-; Fitter               ; 00:01:05     ; 1.0                     ; 7526 MB             ; 00:01:30                           ;
-; Timing Analyzer      ; 00:00:08     ; 1.0                     ; 5514 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 5147 MB             ; 00:00:02                           ;
-; Assembler            ; 00:00:11     ; 1.0                     ; 4875 MB             ; 00:00:10                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 5158 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 5150 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 5154 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 5158 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 5150 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 5150 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 5154 MB             ; 00:00:02                           ;
-; Total                ; 00:01:57     ; --                      ; --                  ; 00:02:20                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4833 MB             ; 00:00:09                           ;
+; Fitter               ; 00:00:59     ; 1.0                     ; 7052 MB             ; 00:01:19                           ;
+; Assembler            ; 00:00:15     ; 1.0                     ; 4869 MB             ; 00:00:08                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.1                     ; 5289 MB             ; 00:00:03                           ;
+; Total                ; 00:01:28     ; --                      ; --                  ; 00:01:39                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -119,15 +111,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; Riccardo         ; Windows 10 ; 10.0       ; x86_64         ;
 ; Fitter               ; Riccardo         ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; Riccardo         ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; Riccardo         ; Windows 10 ; 10.0       ; x86_64         ;
 ; Assembler            ; Riccardo         ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; Riccardo         ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; Riccardo         ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; Riccardo         ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; Riccardo         ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; Riccardo         ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; Riccardo         ; Windows 10 ; 10.0       ; x86_64         ;
 ; Timing Analyzer      ; Riccardo         ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
@@ -137,15 +121,7 @@ https://fpgasoftware.intel.com/eula.
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off AES_cipher -c AES_cipher
 quartus_fit --read_settings_files=off --write_settings_files=off AES_cipher -c AES_cipher
-quartus_sta AES_cipher -c AES_cipher
-quartus_sta AES_cipher -c AES_cipher
-quartus_asm --read_settings_files=on --write_settings_files=off AES_cipher -c AES_cipher
-quartus_sta AES_cipher -c AES_cipher
-quartus_sta AES_cipher -c AES_cipher
-quartus_sta AES_cipher -c AES_cipher
-quartus_sta AES_cipher -c AES_cipher
-quartus_sta AES_cipher -c AES_cipher
-quartus_sta AES_cipher -c AES_cipher
+quartus_asm --read_settings_files=off --write_settings_files=off AES_cipher -c AES_cipher
 quartus_sta AES_cipher -c AES_cipher
 
 

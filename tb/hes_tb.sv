@@ -13,7 +13,7 @@ module aes_stream_cipher_tb;
   
   wire valid_out;
   wire [7:0] data_out;
-  wire [7:0] counter_block; //just here for testing
+
   
   
 
@@ -25,8 +25,7 @@ module aes_stream_cipher_tb;
     .key(key),
     .data_in(data_in),
 	.data_out(data_out),
-    .valid_out(valid_out),
-	.counter_block(counter_block)
+    .valid_out(valid_out)
   );
 //internal signals
   reg [7:0] tv_key [10];
@@ -72,8 +71,8 @@ end
       wait(valid_out);
 	  @ (posedge clk);
       if (data_out !== tv_output_byte[j]) begin
-        $display("Test %2d := ERROR (expected output_byte = %02h, got = %02h, counter_block at= %02h)",
-                  j + 1, tv_output_byte[j], data_out,counter_block);
+        $display("Test %2d := ERROR (expected output_byte = %02h, got = %02h)",
+                  j + 1, tv_output_byte[j]);
       end else begin
         $display("Test %2d := OK", j + 1);
       end

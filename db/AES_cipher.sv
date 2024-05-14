@@ -33,13 +33,6 @@ reg [7:0] counter_block;
     8'ha0, 8'he0, 8'h3b, 8'h4d, 8'hae, 8'h2a, 8'hf5, 8'hb0, 8'hc8, 8'heb, 8'hbb, 8'h3c, 8'h83, 8'h53, 8'h99, 8'h61,
     8'h17, 8'h2b, 8'h04, 8'h7e, 8'hba, 8'h77, 8'hd6, 8'h26, 8'he1, 8'h69, 8'h14, 8'h63, 8'h55, 8'h21, 8'h0c, 8'h7d
 };
-
-	
-	
-
-   
-
- 
     // Always_ff block to handle counter and S-box input based on clock and reset signals
  
     always_ff @(posedge clk or negedge reset_n) begin

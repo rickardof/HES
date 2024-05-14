@@ -1,0 +1,38 @@
+# ignore ModelSim generated files and directories (temp files and so on)
+[_@]*
+
+# ignore compilation output of ModelSim
+*.cr.mti
+*.mti
+*.dat
+*.dbs
+*.psm
+*.bak
+*.cmp
+*.jpg
+*.html
+*.bsf
+
+# ignore simulation output of ModelSim
+wlf*
+*.wlf
+*.vstf
+*.ucdb
+cov*/
+transcript*
+sc_dpiheader.h
+vsim.dbg
+
+# modelsim: ignore "doc, work" folders
+modelsim/work
+modelsim/work/*
+
+# quartus: ignore "db, incremental_db, output_files" folders and other files
+quartus/db
+quartus/db/*
+quartus/incremental_db
+quartus/incremental_db/*
+quartus/output_files
+quartus/output_files/*
+*.qws
+quartus/c5_pin_model_dump.txt

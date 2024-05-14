@@ -1,5 +1,5 @@
 Analysis & Synthesis report for proj_AES_cipher
-Tue May 14 11:41:29 2024
+Tue May 14 17:19:54 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -44,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue May 14 11:41:29 2024          ;
+; Analysis & Synthesis Status     ; Successful - Tue May 14 17:19:53 2024          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; proj_AES_cipher                                ;
 ; Top-level Entity Name           ; AES_cipher                                     ;
@@ -157,25 +157,25 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processors 2-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                    ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
-; ../db/AES_cipher.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                    ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------+---------+
+; ../db/AES_cipher.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/leona/Desktop/HES/db/AES_cipher.sv ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------+---------+
 
 
 +----------------------------------------------------------------+
@@ -277,52 +277,52 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Tue May 14 11:41:13 2024
+    Info: Processing started: Tue May 14 17:19:46 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off proj_AES_cipher -c proj_AES_cipher
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /users/riccardo/desktop/progetto hes/hes/db/aes_cipher.sv
-    Info (12023): Found entity 1: AES_cipher File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 1
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/leona/desktop/hes/db/aes_cipher.sv
+    Info (12023): Found entity 1: AES_cipher File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 1
 Info (12127): Elaborating entity "AES_cipher" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (15717): Design contains 28 virtual pins; timing numbers associated with paths containing virtual pins are estimates
-    Info (15719): Pin "data_out[0]" is virtual output pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 8
-    Info (15719): Pin "data_out[1]" is virtual output pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 8
-    Info (15719): Pin "data_out[2]" is virtual output pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 8
-    Info (15719): Pin "data_out[3]" is virtual output pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 8
-    Info (15719): Pin "data_out[4]" is virtual output pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 8
-    Info (15719): Pin "data_out[5]" is virtual output pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 8
-    Info (15719): Pin "data_out[6]" is virtual output pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 8
-    Info (15719): Pin "data_out[7]" is virtual output pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 8
-    Info (15719): Pin "valid_out" is virtual output pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 10
-    Info (15718): Pin "data_in[0]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 7
-    Info (15718): Pin "reset_n" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 3
-    Info (15718): Pin "valid_in" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 4
-    Info (15718): Pin "data_in[1]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 7
-    Info (15718): Pin "data_in[2]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 7
-    Info (15718): Pin "data_in[3]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 7
-    Info (15718): Pin "data_in[4]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 7
-    Info (15718): Pin "data_in[5]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 7
-    Info (15718): Pin "data_in[6]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 7
-    Info (15718): Pin "data_in[7]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 7
-    Info (15718): Pin "key[0]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 6
-    Info (15718): Pin "new_message" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 5
-    Info (15718): Pin "key[1]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 6
-    Info (15718): Pin "key[7]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 6
-    Info (15718): Pin "key[6]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 6
-    Info (15718): Pin "key[4]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 6
-    Info (15718): Pin "key[5]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 6
-    Info (15718): Pin "key[3]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 6
-    Info (15718): Pin "key[2]" is virtual input pin File: C:/Users/Riccardo/Desktop/Progetto HES/HES/db/AES_cipher.sv Line: 6
+    Info (15719): Pin "data_out[0]" is virtual output pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 8
+    Info (15719): Pin "data_out[1]" is virtual output pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 8
+    Info (15719): Pin "data_out[2]" is virtual output pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 8
+    Info (15719): Pin "data_out[3]" is virtual output pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 8
+    Info (15719): Pin "data_out[4]" is virtual output pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 8
+    Info (15719): Pin "data_out[5]" is virtual output pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 8
+    Info (15719): Pin "data_out[6]" is virtual output pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 8
+    Info (15719): Pin "data_out[7]" is virtual output pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 8
+    Info (15719): Pin "valid_out" is virtual output pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 10
+    Info (15718): Pin "data_in[0]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 7
+    Info (15718): Pin "reset_n" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 3
+    Info (15718): Pin "valid_in" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 4
+    Info (15718): Pin "data_in[1]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 7
+    Info (15718): Pin "data_in[2]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 7
+    Info (15718): Pin "data_in[3]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 7
+    Info (15718): Pin "data_in[4]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 7
+    Info (15718): Pin "data_in[5]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 7
+    Info (15718): Pin "data_in[6]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 7
+    Info (15718): Pin "data_in[7]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 7
+    Info (15718): Pin "key[0]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 6
+    Info (15718): Pin "new_message" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 5
+    Info (15718): Pin "key[1]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 6
+    Info (15718): Pin "key[7]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 6
+    Info (15718): Pin "key[6]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 6
+    Info (15718): Pin "key[4]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 6
+    Info (15718): Pin "key[5]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 6
+    Info (15718): Pin "key[3]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 6
+    Info (15718): Pin "key[2]" is virtual input pin File: C:/Users/leona/Desktop/HES/db/AES_cipher.sv Line: 6
 Info (21057): Implemented 86 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 0 output pins
     Info (21061): Implemented 85 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4833 megabytes
-    Info: Processing ended: Tue May 14 11:41:29 2024
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Peak virtual memory: 4855 megabytes
+    Info: Processing ended: Tue May 14 17:19:54 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
 
 

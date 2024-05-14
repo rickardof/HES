@@ -1,4 +1,32 @@
-# Compile of AES_cipher.sv was successful.
-# Compile of hes_tb.sv failed with 1 errors.
 # Compile of hes_tb.sv was successful.
 # Compile of AES_cipher.sv was successful.
+vsim -gui work.aes_stream_cipher_tb
+# vsim -gui work.aes_stream_cipher_tb 
+# Start time: 17:24:44 on May 14,2024
+# Loading sv_std.std
+# Loading work.aes_stream_cipher_tb
+# Loading work.AES_cipher
+add wave  \
+sim:/aes_stream_cipher_tb/clk \
+sim:/aes_stream_cipher_tb/reset_n \
+sim:/aes_stream_cipher_tb/valid_in \
+sim:/aes_stream_cipher_tb/new_message \
+sim:/aes_stream_cipher_tb/key \
+sim:/aes_stream_cipher_tb/data_in \
+sim:/aes_stream_cipher_tb/valid_out \
+sim:/aes_stream_cipher_tb/data_out
+run -all
+# Test  1 := OK
+# Test  2 := OK
+# Test  3 := OK
+# Test  4 := OK
+# Test  5 := OK
+# Test  6 := OK
+# Test  7 := OK
+# Test  8 := OK
+# Test  9 := OK
+# Test 10 := OK
+# ** Note: $stop    : C:/Users/Riccardo/Desktop/Progetto HES/HES/tb/hes_tb.sv(80)
+#    Time: 150 ps  Iteration: 1  Instance: /aes_stream_cipher_tb
+# Break in Module aes_stream_cipher_tb at C:/Users/Riccardo/Desktop/Progetto HES/HES/tb/hes_tb.sv line 80
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/Riccardo/Desktop/Progetto HES/HES/modelsim/wave/wave.do}

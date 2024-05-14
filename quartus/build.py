@@ -1,3 +1,4 @@
+
 # -------------------------------------------------------------------------- #
 # Packages
 # -------------------------------------------------------------------------- #
@@ -18,8 +19,8 @@ elif sys.version_info[0] == 3:
 # Build routine
 # -------------------------------------------------------------------------- #
 if not PYTHON_3:
-    TOP_LEVEL = raw_input("Enter top-level module: ")
+    TOP_LEVEL = raw_input("AES_cipher")
 elif PYTHON_3:
-    TOP_LEVEL =     input("Enter top-level module: ")
+    TOP_LEVEL =     input("AES_cipher")
 
 os.system("quartus_sh -t quartus.build " + TOP_LEVEL)

@@ -8,8 +8,10 @@ module AES_cipher (
     output reg [7:0] data_out,
     output reg valid_out
 );
+
 //internal signals
-    reg [7:0] counter_block;
+
+reg [7:0] counter_block;
    
 
     // AES Inverse S-box Lookup Table for encryption/decryption
@@ -42,12 +44,12 @@ module AES_cipher (
  
     always_ff @(posedge clk or negedge reset_n) begin
         if (!reset_n) begin
-            counter_block <= 0;
+            counter_block <= 8'h0;
         end else if (new_message) begin
 		
                 counter_block <= key; // Initialize counter_block with key at the start of a new message
             end else if (!new_message) begin
-                counter_block <= counter_block + 1; // Increment counter_block for next encryption/decryption operation
+                counter_block <= counter_block + 8'h1; // Increment counter_block for next encryption/decryption operation
             end
     end
 	

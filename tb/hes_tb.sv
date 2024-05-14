@@ -72,7 +72,7 @@ end
 	  @ (posedge clk);
       if (data_out !== tv_output_byte[j]) begin
         $display("Test %2d := ERROR (expected output_byte = %02h, got = %02h)",
-                  j + 1, tv_output_byte[j]);
+                  j + 1, tv_output_byte[j],data_out);
       end else begin
         $display("Test %2d := OK", j + 1);
       end

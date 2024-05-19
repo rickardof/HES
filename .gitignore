@@ -19,13 +19,13 @@ wlf*
 *.vstf
 *.ucdb
 cov*/
-transcript*
 sc_dpiheader.h
 vsim.dbg
 
 # modelsim: ignore "doc, work" folders
 modelsim/work
 modelsim/work/*
+modelsim/transcript
 
 # quartus: ignore "db, incremental_db, output_files" folders and other files
 quartus/db

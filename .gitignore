@@ -2,7 +2,6 @@
 [_@]*
 
 # ignore compilation output of ModelSim
-*.cr.mti
 *.mti
 *.dat
 *.dbs

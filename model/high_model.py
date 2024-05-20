@@ -36,8 +36,8 @@ def aes_stream_cipher(key: int, data_array: list[int], encrypt: bool) -> list[in
     output_array = []
 
     for i in range(len(data_array)):
-        data = data_array[i] #i-th byte of the data array
-        cb_i = counter_block[i] #-ith byte of the counter block
+        data = data_array[i] # i-th byte of the data array
+        cb_i = counter_block[i] # i-th byte of the counter block
 
         s_box_output = SBOXTABLE[(cb_i >> 4) & 0xF][cb_i & 0xF]  # lookup in the table from the msb and lsb of the i-th element of the counter block
 
@@ -62,12 +62,14 @@ def main():
     default_input = '0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0a'
 
     parser = argparse.ArgumentParser(description='AES Stream Cipher by Riccardo Fantasia & Leonardo Pantani')
-    parser.add_argument('-k', '--key', type=parse_key, default=default_key, help='Input in hexadecimal or decimal format (e.g. 42 or 0x2a)')
+    parser.add_argument('-k', '--key', type=parse_key, default=default_key, help='Input in hexadecimal or decimal format (e.g. 42 o 0x2a)')
     parser.add_argument('-i', '--input', type=parse_input, default=default_input, help='Input in hexadecimal or decimal format (e.g. 0x32,0x88,0x31,13,15)')
+    parser.add_argument('-o', '--output', action='store_true', help='If provided, the execution generates a file containing ciphertext, one character per row, to be given to modelsim, in the tv folder')
 
     args = parser.parse_args()
     key_val = args.key
     input_val = args.input
+    to_output = args.output
 
     key_str = f"Given key{' (default)' if args.key == parse_key(default_key) else ''}: {key_val}"
     input_str = f"Given input{' (default)' if args.input == parse_input(default_input) else ''}: {input_val}"
@@ -78,6 +80,11 @@ def main():
     cipher_hex = [hex(num) for num in cipher]
     print("> Cipher Text (hex):", cipher_hex)
     print("> Cipher Text (dec):", cipher)
+
+    if to_output:
+        with open("output_byte.txt", "w") as f:
+            for num in cipher_hex:
+                f.write(f"{num[2:]}\n")
 
     decrypted_plaintext = aes_stream_cipher(key_val, cipher, False)
     plaintext_hex = [hex(num) for num in decrypted_plaintext]

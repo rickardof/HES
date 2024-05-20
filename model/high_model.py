@@ -30,7 +30,7 @@ encrypt (bool): True for encryption, False for decryption.
 Returns:
 list[int]: The resulting array of integers after encryption or decryption.
 """
-def aes_stream_cipher(key: int, data_array: list[int], encrypt: bool) -> list[int]:
+def aes_stream_cipher(key: int, data_array: list[int]) -> list[int]:
     # initialization
     counter_block = [(key + i) % 256 for i in range(len(data_array))]
     output_array = []
@@ -76,7 +76,7 @@ def main():
     print(key_str)
     print(input_str)
 
-    cipher = aes_stream_cipher(key_val, input_val, True)
+    cipher = aes_stream_cipher(key_val, input_val)
     cipher_hex = [hex(num) for num in cipher]
     print("> Cipher Text (hex):", cipher_hex)
     print("> Cipher Text (dec):", cipher)
@@ -86,7 +86,7 @@ def main():
             for num in cipher_hex:
                 f.write(f"{num[2:]}\n")
 
-    decrypted_plaintext = aes_stream_cipher(key_val, cipher, False)
+    decrypted_plaintext = aes_stream_cipher(key_val, cipher)
     plaintext_hex = [hex(num) for num in decrypted_plaintext]
     print("> Decrypted Plaintext (hex):", plaintext_hex)
     print("> Decrypted Plaintext (dec):", decrypted_plaintext)

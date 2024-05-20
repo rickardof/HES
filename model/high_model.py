@@ -25,7 +25,6 @@ ENCRYPT/DECRYPT FUNCTION
 Parameters:
 key (int): The key used to encrypt the data.
 data_array (list[int]): The array of integers to encrypt or decrypt.
-encrypt (bool): True for encryption, False for decryption.
 
 Returns:
 list[int]: The resulting array of integers after encryption or decryption.
@@ -64,7 +63,7 @@ def main():
     parser = argparse.ArgumentParser(description='AES Stream Cipher by Riccardo Fantasia & Leonardo Pantani')
     parser.add_argument('-k', '--key', type=parse_key, default=default_key, help='Input in hexadecimal or decimal format (e.g. 42 o 0x2a)')
     parser.add_argument('-i', '--input', type=parse_input, default=default_input, help='Input in hexadecimal or decimal format (e.g. 0x32,0x88,0x31,13,15)')
-    parser.add_argument('-o', '--output', action='store_true', help='If provided, the execution generates a file containing ciphertext, one character per row, to be given to modelsim, in the tv folder')
+    parser.add_argument('-o', '--output', action='store_true', help='If provided, the execution generates three files to be manually moved to the modelsim/tv folder to assess the hardware functionalities')
 
     args = parser.parse_args()
     key_val = args.key
@@ -82,9 +81,14 @@ def main():
     print("> Cipher Text (dec):", cipher)
 
     if to_output:
-        with open("output_byte.txt", "w") as f:
+        with open("expected_output.txt", "w") as f:
             for num in cipher_hex:
                 f.write(f"{num[2:]}\n")
+        with open("key.txt", "w") as f:
+            f.write(f"{hex(key_val)[2:]}\n")
+        with open("input.txt", "w") as f:
+            for val in input_val:
+                f.write(f"{hex(val)[2:]}\n")
 
     decrypted_plaintext = aes_stream_cipher(key_val, cipher)
     plaintext_hex = [hex(num) for num in decrypted_plaintext]

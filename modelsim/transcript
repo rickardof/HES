@@ -3,7 +3,7 @@
 # 2 compiles, 0 failed with no errors.
 vsim -gui work.AES_cipher_testbench
 # vsim -gui work.AES_cipher_testbench 
-# Start time: 19:37:59 on May 20,2024
+# Start time: 21:37:40 on May 20,2024
 # Loading sv_std.std
 # Loading work.AES_cipher_testbench
 # Loading work.AES_cipher
@@ -16,125 +16,10 @@ sim:/AES_cipher_testbench/data_in \
 sim:/AES_cipher_testbench/valid_in \
 sim:/AES_cipher_testbench/data_out \
 sim:/AES_cipher_testbench/valid_out \
-sim:/AES_cipher_testbench/tv_key
-# Compile of AES_cipher_testbench.sv was successful.
-# Compile of AES_cipher.sv was successful.
-# 2 compiles, 0 failed with no errors.
+sim:/AES_cipher_testbench/tv_key \
+sim:/AES_cipher_testbench/tv_input_data \
+sim:/AES_cipher_testbench/tv_expected_output
 run -all
-# Test  1 := ERROR (expected output_byte = e2, got = 38)
-# Test  2 := ERROR (expected output_byte = 3b, got = 80)
-# Test  3 := ERROR (expected output_byte = 81, got = 98)
-# Test  4 := ERROR (expected output_byte = 9f, got = 2b)
-# Test  5 := ERROR (expected output_byte = 2a, got = fa)
-# Test  6 := ERROR (expected output_byte = f9, got = 81)
-# Test  7 := ERROR (expected output_byte = 80, got = 33)
-# Test  8 := ERROR (expected output_byte = 3c, got = 86)
-# Test  9 := ERROR (expected output_byte = 87, got = 4a)
-# Test 10 := ERROR (expected output_byte = 49, got = 4e)
-# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(66)
-#    Time: 150 ps  Iteration: 1  Instance: /AES_cipher_testbench
-# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 66
-# Compile of AES_cipher_testbench.sv was successful.
-# Compile of AES_cipher.sv was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.AES_cipher_testbench
-# Loading work.AES_cipher
-run -all
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
-# Test  1 := OK
-# Test  2 := OK
-# Test  3 := OK
-# Test  4 := OK
-# Test  5 := OK
-# Test  6 := OK
-# Test  7 := OK
-# Test  8 := OK
-# Test  9 := OK
-# Test 10 := OK
-# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(66)
-#    Time: 150 ps  Iteration: 1  Instance: /AES_cipher_testbench
-# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 66
-restart
-run -all
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
-# Test  1 := ERROR (expected output_byte = e2, got = 83)
-# Test  2 := ERROR (expected output_byte = 3b, got = 99)
-# Test  3 := ERROR (expected output_byte = 81, got = 2c)
-# Test  4 := ERROR (expected output_byte = 9f, got = fb)
-# Test  5 := ERROR (expected output_byte = 2a, got = 82)
-# Test  6 := ERROR (expected output_byte = f9, got = 32)
-# Test  7 := ERROR (expected output_byte = 80, got = 89)
-# Test  8 := ERROR (expected output_byte = 3c, got = 4b)
-# Test  9 := ERROR (expected output_byte = 87, got = 4d)
-# Test 10 := ERROR (expected output_byte = 49, got = ce)
-# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(66)
-#    Time: 150 ps  Iteration: 1  Instance: /AES_cipher_testbench
-# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 66
-# Compile of AES_cipher_testbench.sv was successful.
-# Compile of AES_cipher.sv was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.AES_cipher_testbench
-# Loading work.AES_cipher
-run -all
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
-# Test  1 := ERROR (expected output_byte = f2, got = 83)
-# Test  2 := ERROR (expected output_byte = d5, got = 99)
-# Test  3 := ERROR (expected output_byte = f8, got = 2c)
-# Test  4 := ERROR (expected output_byte = 78, got = fb)
-# Test  5 := ERROR (expected output_byte = e6, got = 82)
-# Test  6 := ERROR (expected output_byte = 3f, got = 32)
-# Test  7 := ERROR (expected output_byte = 85, got = 89)
-# Test  8 := ERROR (expected output_byte = 93, got = 4b)
-# Test  9 := ERROR (expected output_byte = 26, got = 4d)
-# Test 10 := ERROR (expected output_byte = f5, got = ce)
-# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(66)
-#    Time: 150 ps  Iteration: 1  Instance: /AES_cipher_testbench
-# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 66
-# Compile of AES_cipher_testbench.sv was successful.
-# Compile of AES_cipher.sv was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.AES_cipher_testbench
-# Loading work.AES_cipher
-run -all
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
-# Test  1 := ERROR (expected output_byte = 9f, got = e2)
-# Test  2 := ERROR (expected output_byte = 83, got = 3b)
-# Test  3 := ERROR (expected output_byte = f0, got = 81)
-# Test  4 := ERROR (expected output_byte = d3, got = 9f)
-# Test  5 := ERROR (expected output_byte = fe, got = 2a)
-# Test  6 := ERROR (expected output_byte = 7a, got = f9)
-# Test  7 := ERROR (expected output_byte = e4, got = 80)
-# Test  8 := ERROR (expected output_byte = 31, got = 3c)
-# Test  9 := ERROR (expected output_byte = 8b, got = 87)
-# Test 10 := ERROR (expected output_byte = 91, got = 49)
-# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(66)
-#    Time: 150 ps  Iteration: 1  Instance: /AES_cipher_testbench
-# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 66
-# Compile of AES_cipher_testbench.sv was successful.
-# Compile of AES_cipher.sv was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.AES_cipher_testbench
-# Loading work.AES_cipher
-run -all
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
 # Test  1 := ERROR (expected output_byte = 9f, got = e2)
 # Test  2 := ERROR (expected output_byte = 83, got = 3b)
 # Test  3 := ERROR (expected output_byte = f0, got = 81)
@@ -172,3 +57,47 @@ run -all
 # ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(66)
 #    Time: 150 ps  Iteration: 1  Instance: /AES_cipher_testbench
 # Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 66
+# Compile of AES_cipher_testbench.sv was successful.
+# Compile of AES_cipher.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.AES_cipher_testbench
+# Loading work.AES_cipher
+run -all
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# Test  1 := OK
+# Test  2 := OK
+# Test  3 := OK
+# Test  4 := OK
+# Test  5 := OK
+# Test  6 := OK
+# Test  7 := OK
+# Test  8 := OK
+# Test  9 := OK
+# Test 10 := OK
+# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(66)
+#    Time: 150 ps  Iteration: 1  Instance: /AES_cipher_testbench
+# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 66
+restart
+run -all
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# Test  1 := OK
+# Test  2 := OK
+# Test  3 := OK
+# Test  4 := OK
+# Test  5 := OK
+# Test  6 := OK
+# Test  7 := OK
+# Test  8 := OK
+# Test  9 := OK
+# Test 10 := OK
+# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(66)
+#    Time: 150 ps  Iteration: 1  Instance: /AES_cipher_testbench
+# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 66
+# End time: 21:59:27 on May 20,2024, Elapsed time: 0:21:47
+# Errors: 0, Warnings: 1

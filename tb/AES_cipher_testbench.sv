@@ -28,17 +28,17 @@ module AES_cipher_testbench;
     //internal signals
     reg [7:0] tv_key [1];
     reg [7:0] tv_input_data [10];
-    reg [7:0] tv_output_byte [10];
+    reg [7:0] tv_expected_output [10];
 
     // ---- Stimuli routine
   initial begin
       $readmemh("tv/key.txt", tv_key);
-      $readmemh("tv/input_data.txt", tv_input_data);
-      $readmemh("tv/output_byte.txt", tv_output_byte);
+      $readmemh("tv/input.txt", tv_input_data);
+      $readmemh("tv/expected_output.txt", tv_expected_output);
       
       @(posedge reset_n);
       @(posedge clk);
-      key = tv_key[0]; // key = 8'h11
+      key = tv_key[0];
       new_message = 1'b1;
 
       for (int j = 0; j < 10; j++) begin
@@ -57,8 +57,8 @@ module AES_cipher_testbench;
     for (int j = 0; j < 10; j++) begin
       wait(valid_out);
       @(posedge clk);
-      if (data_out !== tv_output_byte[j]) begin
-        $display("Test %2d := ERROR (expected output_byte = %02h, got = %02h)", j+1, tv_output_byte[j],data_out);
+      if (data_out !== tv_expected_output[j]) begin
+        $display("Test %2d := ERROR (expected output_byte = %02h, got = %02h)", j+1, tv_expected_output[j], data_out);
       end else begin
         $display("Test %2d := OK", j+1);
       end

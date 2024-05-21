@@ -12,7 +12,7 @@ module AES_cipher_testbench;
     wire valid_out;
 
     initial #14.5 reset_n = 1'b1; // Reset changes just one time
-    always #5.5 clk = !clk;  // Period of the clock is 11 units
+    always #5.5 clk = !clk; // Period of the clock is 11 units
 
     AES_cipher UUT (
       .clk(clk),
@@ -25,44 +25,55 @@ module AES_cipher_testbench;
       .valid_out(valid_out)
     );
 
-    //internal signals
-    reg [7:0] tv_key [1];
-    reg [7:0] tv_input_data [10];
-    reg [7:0] tv_expected_output [10];
+// Internal signals
+reg [7:0] tv_key [1];
+reg [7:0] tv_input_data [256]; // Assuming max 256 bytes of data
+reg [7:0] tv_expected_output [256]; // Assuming max 256 bytes of data
+integer data_len;
+integer file, r;
 
-    // ---- Stimuli routine
-  initial begin
-      $readmemh("tv/key.txt", tv_key);
-      $readmemh("tv/input.txt", tv_input_data);
-      $readmemh("tv/expected_output.txt", tv_expected_output);
-      
-      @(posedge reset_n);
-      @(posedge clk);
-      key = tv_key[0];
-      new_message = 1'b1;
+// ---- Stimuli routine
+initial begin
+    // reading from files (of dynamic size)
+    $readmemh("tv/key.txt", tv_key);
+    file = $fopen("tv/input.txt", "r");
+    data_len = 0;
+    while (!$feof(file)) begin
+        r = $fscanf(file, "%h\n", tv_input_data[data_len]);
+        data_len = data_len + 1;
+    end
+    $fclose(file);
+    $readmemh("tv/expected_output.txt", tv_expected_output);
 
-      for (int j = 0; j < 10; j++) begin
+    // actual test code
+    @(posedge reset_n);
+    @(posedge clk);
+    key = tv_key[0];
+    new_message = 1'b1;
+
+    for (int j = 0; j < data_len; j++) begin
         @(posedge clk);
         new_message = 1'b0;
         data_in = tv_input_data[j];
-        valid_in = 1'b1; 
-      end  
-  end
+        valid_in = 1'b1;
+    end
+end
 
-  // ---- Check routine
-  initial begin
+// ---- Check routine
+initial begin
     @(posedge reset_n);
     @(posedge clk);
 
-    for (int j = 0; j < 10; j++) begin
-      wait(valid_out);
-      @(posedge clk);
-      if (data_out !== tv_expected_output[j]) begin
-        $display("Test %2d := ERROR (expected output_byte = %02h, got = %02h)", j+1, tv_expected_output[j], data_out);
-      end else begin
-        $display("Test %2d := OK", j+1);
-      end
+    for (int j = 0; j < data_len; j++) begin
+        wait(valid_out);
+        @(posedge clk);
+        if (data_out !== tv_expected_output[j]) begin
+            $display("Test %2d := ERROR (expected output_byte = %02h, got = %02h)", j+1, tv_expected_output[j], data_out);
+        end else begin
+            $display("Test %2d := OK", j+1);
+        end
     end
-    $stop;  
-  end
+    $stop;
+end
+
 endmodule

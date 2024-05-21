@@ -34,30 +34,30 @@ module AES_cipher (
     8'h17, 8'h2b, 8'h04, 8'h7e, 8'hba, 8'h77, 8'hd6, 8'h26, 8'he1, 8'h69, 8'h14, 8'h63, 8'h55, 8'h21, 8'h0c, 8'h7d
     };
     
-    // Always_ff block to handle counter and S-box input based on clock and reset signals
+    // always_ff block to handle counter and S-box input based on clock and reset signals
     always_ff @(posedge clk or negedge reset_n) begin
         if (!reset_n) begin
             counter_block <= 8'h0;
         end else if (new_message) begin
-                counter_block <= key; // Initialize counter_block with key at the start of a new message
+                counter_block <= key; // initialize counter_block with key at the start of a new message
             end else if (!new_message) begin
-                counter_block <= counter_block + 8'h1; // Increment counter_block for next encryption/decryption operation
+                counter_block <= counter_block + 8'h1; // increment counter_block for next encryption/decryption operation
             end
     end
 	
 
-    // Calculate and update outputs with combinational logic
+    // calculate and update outputs with combinational logic
     always_comb begin
         if (!reset_n) begin
-		//Ensure data output and validity flag are reset when reset is active
+		    // ensure data output and validity flag are reset when reset is active
             data_out = 0;
             valid_out = 0;
         end else if (valid_in) begin
-            // Compute s_box_input from the updated counter_block
+            // compute s_box_input from the updated counter_block
 			data_out = data_in ^ aes_inv_sbox[(counter_block[7:4] * 16) + counter_block[3:0]]; // XOR data input with S-box output
-            valid_out = 1; // Signal that the output data is ready
+            valid_out = 1; // signal that the output data is ready
         end else begin
-		//reset outputs when input is not valid
+		    // reset outputs when input is not valid
             data_out = 0;
             valid_out = 0;
         end

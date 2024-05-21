@@ -39,22 +39,27 @@ module AES_cipher (
         if (!reset_n) begin
             counter_block <= 8'h0;
         end else if (new_message) begin
-            counter_block <= key; // initialize counter_block with key at the start of a new message
-        end else begin
-            counter_block <= counter_block + 8'h1; // increment counter_block for next encryption/decryption operation
-        end
+                counter_block <= key; // initialize counter_block with key at the start of a new message
+            end else if (!new_message) begin
+                counter_block <= counter_block + 8'h1; // increment counter_block for next encryption/decryption operation
+            end
     end
+	
 
     // calculate and update outputs with combinational logic
     always_comb begin
-        if (!reset_n || !valid_in) begin
-            // ensure data output and validity flag are reset when reset is active OR reset outputs when input is not valid
+        if (!reset_n) begin
+		    // ensure data output and validity flag are reset when reset is active
             data_out = 0;
             valid_out = 0;
-        end else begin
+        end else if (valid_in) begin
             // compute s_box_input from the updated counter_block
-            data_out = data_in ^ aes_inv_sbox[(counter_block[7:4] * 16) + counter_block[3:0]]; // XOR data input with S-box output
+			data_out = data_in ^ aes_inv_sbox[(counter_block[7:4] * 16) + counter_block[3:0]]; // XOR data input with S-box output
             valid_out = 1; // signal that the output data is ready
+        end else begin
+		    // reset outputs when input is not valid
+            data_out = 0;
+            valid_out = 0;
         end
-end
+    end
 endmodule

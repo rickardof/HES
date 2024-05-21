@@ -11,8 +11,8 @@ module AES_cipher_testbench;
     wire [7:0] data_out;
     wire valid_out;
 
-    initial #14.5 reset_n = 1'b1; // Reset changes just one time
-    always #5.5 clk = !clk; // Period of the clock is 11 units
+    initial #15 reset_n = 1'b1; // Reset changes just one time
+    always #10 clk = !clk; // Period of the clock is 20 units
 
     AES_cipher UUT (
       .clk(clk),
@@ -29,20 +29,20 @@ module AES_cipher_testbench;
 reg [7:0] tv_key [1];
 reg [7:0] tv_input_data [256]; // Assuming max 256 bytes of data
 reg [7:0] tv_expected_output [256]; // Assuming max 256 bytes of data
-integer data_len;
-integer file, r;
+integer internal_data_len;
+integer internal_file, internal_r;
 
 // ---- Stimuli routine
 initial begin
-    // reading from files (of dynamic size)
+    // reading from internal_files (of dynamic size)
     $readmemh("tv/key.txt", tv_key);
-    file = $fopen("tv/input.txt", "r");
-    data_len = 0;
-    while (!$feof(file)) begin
-        r = $fscanf(file, "%h\n", tv_input_data[data_len]);
-        data_len = data_len + 1;
+    internal_file = $fopen("tv/input.txt", "r");
+    internal_data_len = 0;
+    while (!$feof(internal_file)) begin
+        internal_r = $fscanf(internal_file, "%h\n", tv_input_data[internal_data_len]);
+        internal_data_len = internal_data_len + 1;
     end
-    $fclose(file);
+    $fclose(internal_file);
     $readmemh("tv/expected_output.txt", tv_expected_output);
 
     // actual test code
@@ -51,12 +51,16 @@ initial begin
     key = tv_key[0];
     new_message = 1'b1;
 
-    for (int j = 0; j < data_len; j++) begin
+    for (int j = 0; j < internal_data_len; j++) begin
         @(posedge clk);
         new_message = 1'b0;
         data_in = tv_input_data[j];
         valid_in = 1'b1;
     end
+    @(posedge clk);
+    valid_in = 1'b0;
+    @(posedge clk);
+    $stop;
 end
 
 // ---- Check routine
@@ -64,7 +68,7 @@ initial begin
     @(posedge reset_n);
     @(posedge clk);
 
-    for (int j = 0; j < data_len; j++) begin
+    for (int j = 0; j < internal_data_len; j++) begin
         wait(valid_out);
         @(posedge clk);
         if (data_out !== tv_expected_output[j]) begin
@@ -73,7 +77,6 @@ initial begin
             $display("Test %2d := OK", j+1);
         end
     end
-    $stop;
 end
 
 endmodule

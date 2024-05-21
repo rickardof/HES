@@ -3,7 +3,7 @@
 # 2 compiles, 0 failed with no errors.
 vsim -gui work.AES_cipher_testbench
 # vsim -gui work.AES_cipher_testbench 
-# Start time: 11:46:21 on May 21,2024
+# Start time: 21:07:52 on May 21,2024
 # Loading sv_std.std
 # Loading work.AES_cipher_testbench
 # Loading work.AES_cipher
@@ -15,161 +15,8 @@ sim:/AES_cipher_testbench/key \
 sim:/AES_cipher_testbench/data_in \
 sim:/AES_cipher_testbench/valid_in \
 sim:/AES_cipher_testbench/data_out \
-sim:/AES_cipher_testbench/valid_out \
-sim:/AES_cipher_testbench/data_len
+sim:/AES_cipher_testbench/valid_out
 run -all
-# Test  1 := ERROR (expected output_byte = f2, got = xx)
-# Test  2 := ERROR (expected output_byte = d5, got = d6)
-# Test  3 := ERROR (expected output_byte = f8, got = f9)
-# Test  4 := ERROR (expected output_byte = 79, got = 7f)
-# Test  5 := ERROR (expected output_byte = eb, got = e6)
-# Test  6 := ERROR (expected output_byte = 30, got = 31)
-# Test  7 := ERROR (expected output_byte = xx, got = 00)
-# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(77)
-#    Time: 114 ps  Iteration: 1  Instance: /AES_cipher_testbench
-# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 77
-# Compile of AES_cipher_testbench.sv was successful.
-# Compile of AES_cipher.sv was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.AES_cipher_testbench
-# Loading work.AES_cipher
-restart
-run -all
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
-# Test  1 := OK
-# Test  2 := OK
-# Test  3 := OK
-# Test  4 := OK
-# Test  5 := OK
-# Test  6 := OK
-# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(76)
-#    Time: 102 ps  Iteration: 1  Instance: /AES_cipher_testbench
-# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 76
-restart
-run -all
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
-# Test  1 := OK
-# Test  2 := OK
-# Test  3 := OK
-# Test  4 := OK
-# Test  5 := OK
-# Test  6 := OK
-# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(76)
-#    Time: 102 ps  Iteration: 1  Instance: /AES_cipher_testbench
-# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 76
-restart
-run -all
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
-# Test  1 := OK
-# Test  2 := OK
-# Test  3 := OK
-# Test  4 := OK
-# Test  5 := OK
-# Test  6 := OK
-# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(76)
-#    Time: 102 ps  Iteration: 1  Instance: /AES_cipher_testbench
-# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 76
-restart
-# Compile of AES_cipher_testbench.sv was successful.
-# Compile of AES_cipher.sv was successful.
-# 2 compiles, 0 failed with no errors.
-run -all
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
-# Test  1 := OK
-# Test  2 := OK
-# Test  3 := OK
-# Test  4 := OK
-# Test  5 := OK
-# Test  6 := OK
-# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(76)
-#    Time: 102 ps  Iteration: 1  Instance: /AES_cipher_testbench
-# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 76
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.AES_cipher_testbench
-# Loading work.AES_cipher
-# Compile of AES_cipher_testbench.sv was successful.
-# Compile of AES_cipher.sv was successful.
-# 2 compiles, 0 failed with no errors.
-# Compile of AES_cipher_testbench.sv was successful.
-# Compile of AES_cipher.sv was successful.
-# 2 compiles, 0 failed with no errors.
-run -all
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
-# Test  1 := OK
-# Test  2 := OK
-# Test  3 := OK
-# Test  4 := OK
-# Test  5 := OK
-# Test  6 := OK
-# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(76)
-#    Time: 102 ps  Iteration: 1  Instance: /AES_cipher_testbench
-# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 76
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.AES_cipher_testbench
-# Loading work.AES_cipher
-# Compile of AES_cipher_testbench.sv was successful.
-# Compile of AES_cipher.sv was successful.
-# 2 compiles, 0 failed with no errors.
-run -all
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
-# Test  1 := OK
-# Test  2 := OK
-# Test  3 := OK
-# Test  4 := OK
-# Test  5 := OK
-# Test  6 := OK
-# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(76)
-#    Time: 102 ps  Iteration: 1  Instance: /AES_cipher_testbench
-# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 76
-add wave -position insertpoint  \
-sim:/AES_cipher_testbench/tv_input_data
-# Compile of AES_cipher_testbench.sv was successful.
-# Compile of AES_cipher.sv was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.AES_cipher_testbench
-# Loading work.AES_cipher
-run -all
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
-# Test  1 := OK
-# Test  2 := OK
-# Test  3 := OK
-# Test  4 := OK
-# Test  5 := OK
-# Test  6 := OK
-# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(76)
-#    Time: 102 ps  Iteration: 1  Instance: /AES_cipher_testbench
-# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 76
-# Compile of AES_cipher_testbench.sv was successful.
-# Compile of AES_cipher.sv was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.AES_cipher_testbench
-# Loading work.AES_cipher
-run -all
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
 # Test  1 := OK
 # Test  2 := OK
 # Test  3 := OK
@@ -180,6 +27,6 @@ run -all
 # Test  8 := OK
 # Test  9 := OK
 # Test 10 := OK
-# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(76)
-#    Time: 150 ps  Iteration: 1  Instance: /AES_cipher_testbench
-# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 76
+# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(63)
+#    Time: 270 ps  Iteration: 1  Instance: /AES_cipher_testbench
+# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 63

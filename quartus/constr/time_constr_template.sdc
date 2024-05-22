@@ -5,7 +5,7 @@
 #
 # ------------------------------------------------------------------- #
 
-set CLK_PERIOD_NS 11
+set CLK_PERIOD_NS 10
 set MIN_IO_DELAY [expr double($CLK_PERIOD_NS)/10.0]
 set MAX_IO_DELAY [expr double($CLK_PERIOD_NS)/5.0]
 create_clock -name clk -period $CLK_PERIOD_NS [get_ports clk]

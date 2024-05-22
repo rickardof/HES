@@ -30,3 +30,66 @@ run -all
 # ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(63)
 #    Time: 270 ps  Iteration: 1  Instance: /AES_cipher_testbench
 # Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 63
+# Compile of AES_cipher_testbench.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.AES_cipher_testbench
+# Loading work.AES_cipher
+# Compile of AES_cipher.sv was successful.
+# 2 compiles, 0 failed with no errors.
+run -all
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# Test  1 := OK
+# Test  2 := OK
+# Test  3 := OK
+# Test  4 := OK
+# Test  5 := OK
+# Test  6 := OK
+# Test  7 := OK
+# Test  8 := OK
+# Test  9 := OK
+# Test 10 := OK
+# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(63)
+#    Time: 270 ps  Iteration: 1  Instance: /AES_cipher_testbench
+# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 63
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# Test  1 := OK
+# Test  2 := OK
+# Test  3 := OK
+# Test  4 := OK
+# Test  5 := OK
+# Test  6 := OK
+# Test  7 := OK
+# Test  8 := OK
+# Test  9 := OK
+# Test 10 := OK
+# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(63)
+#    Time: 270 ps  Iteration: 1  Instance: /AES_cipher_testbench
+# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 63
+restart
+run -all
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# Test  1 := OK
+# Test  2 := OK
+# Test  3 := OK
+# Test  4 := OK
+# Test  5 := OK
+# Test  6 := OK
+# Test  7 := OK
+# Test  8 := OK
+# Test  9 := OK
+# Test 10 := OK
+# ** Note: $stop    : C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv(63)
+#    Time: 270 ps  Iteration: 1  Instance: /AES_cipher_testbench
+# Break in Module AES_cipher_testbench at C:/Users/leona/Desktop/HES/tb/AES_cipher_testbench.sv line 63
+# End time: 03:08:04 on May 22,2024, Elapsed time: 6:00:12
+# Errors: 0, Warnings: 1
